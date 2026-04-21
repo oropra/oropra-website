@@ -60,7 +60,7 @@
 
   /* Typography */
   --font-sans: var(--font-nunito), sans-serif;
-  --font-weight-bold: 800;
+  --font-weight-bold: 600;
 
   /* Border radius */
   --radius-btn: 9px;
