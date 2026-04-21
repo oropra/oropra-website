@@ -48,7 +48,7 @@ export default function EquipePage() {
         </video>
         <div className="relative max-w-[800px] mx-auto text-center flex flex-col items-center gap-6">
           <motion.div initial="hidden" animate="show" variants={stagger} className="flex flex-col items-center gap-6">
-            <motion.p variants={fadeUp} className="text-[11px] font-semibold text-accent-default uppercase tracking-[1.2px] bg-accent-subtle inline-block px-3.5 py-1.5 rounded-full">
+            <motion.p variants={fadeUp} className="text-[11px] font-semibold text-accent-default uppercase tracking-[1.2px] bg-accent-subtle inline-block px-3.5 pt-1.5 pb-1 rounded-full">
               Pour l&apos;équipe
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-[clamp(2rem,5vw,3.375rem)] font-bold text-white leading-[1.18]">
