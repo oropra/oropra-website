@@ -11,6 +11,7 @@ const features = [
     title: "Un client = une fiche.",
     desc: "Informations regroupées, dédupliquées, historiques clairs, accès facile pour tous. Chaque membre de l'équipe retrouve ce dont il a besoin en quelques secondes.",
     points: ["Fiche unifiée par client", "Historique complet des échanges", "Accès rapide pour toutes les équipes"],
+    video: "/videos/One-data - fiche client.mp4",
   },
   {
     num: "02", label: "Opportunités",
@@ -81,22 +82,52 @@ export default function FonctionnalitesPage() {
               variants={fadeUp}
               className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white rounded-[14px] p-8 border border-border-light shadow-[var(--shadow-default)]"
             >
-              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl font-bold text-border-strong">{f.num}</span>
-                  <span className="text-xs font-semibold text-text-faint uppercase tracking-wider">{f.label}</span>
-                </div>
-                <h2 className="text-2xl font-bold text-text-emphasis mb-3">{f.title}</h2>
-                <p className="text-text-subtle leading-relaxed">{f.desc}</p>
-              </div>
-              <div className={`space-y-3 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                {f.points.map((p) => (
-                  <div key={p} className="flex items-center gap-3 bg-bg-base rounded-xl px-4 py-3 border border-border-light">
-                    <div className="w-2 h-2 rounded-full bg-accent-default shrink-0" />
-                    <span className="text-sm text-text-primary">{p}</span>
+              {"video" in f ? (
+                <>
+                  <div className="flex flex-col gap-6">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="text-3xl font-bold text-border-strong">{f.num}</span>
+                        <span className="text-xs font-semibold text-text-faint uppercase tracking-wider">{f.label}</span>
+                      </div>
+                      <h2 className="text-2xl font-bold text-text-emphasis mb-3">{f.title}</h2>
+                      <p className="text-text-subtle leading-relaxed">{f.desc}</p>
+                    </div>
+                    <div className="space-y-3">
+                      {f.points.map((p) => (
+                        <div key={p} className="flex items-center gap-3 bg-bg-base rounded-xl px-4 py-3 border border-border-light">
+                          <div className="w-2 h-2 rounded-full bg-accent-default shrink-0" />
+                          <span className="text-sm text-text-primary">{p}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
+                  <div className="rounded-xl overflow-hidden border border-border-light shadow-sm">
+                    <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                      <source src={f.video} type="video/mp4" />
+                    </video>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-3xl font-bold text-border-strong">{f.num}</span>
+                      <span className="text-xs font-semibold text-text-faint uppercase tracking-wider">{f.label}</span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-text-emphasis mb-3">{f.title}</h2>
+                    <p className="text-text-subtle leading-relaxed">{f.desc}</p>
+                  </div>
+                  <div className={`space-y-3 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+                    {f.points.map((p) => (
+                      <div key={p} className="flex items-center gap-3 bg-bg-base rounded-xl px-4 py-3 border border-border-light">
+                        <div className="w-2 h-2 rounded-full bg-accent-default shrink-0" />
+                        <span className="text-sm text-text-primary">{p}</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </motion.div>
           ))}
         </motion.div>
