@@ -30,7 +30,7 @@ export default function Home() {
           <motion.div initial="hidden" animate="show" variants={stagger} className="flex flex-col items-center gap-6">
             <motion.p
               variants={fadeUp}
-              className="text-[11px] font-semibold text-accent-default uppercase tracking-[1.2px] bg-accent-subtle inline-block px-3.5 py-1.5 rounded-full"
+              className="text-[11px] font-semibold text-accent-default uppercase tracking-[1.2px] bg-accent-subtle inline-block px-3.5 pt-1.5 pb-1 rounded-full"
             >
               CRM no-code pour concessions
             </motion.p>
