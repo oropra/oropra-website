@@ -59,7 +59,7 @@
   --shadow-card-strong: 0 4px 16px rgba(22, 58, 110, 0.10);
 
   /* Typography */
-  --font-sans: var(--font-nunito-sans), sans-serif;
+  --font-sans: var(--font-nunito), sans-serif;
   --font-weight-bold: 800;
 
   /* Border radius */

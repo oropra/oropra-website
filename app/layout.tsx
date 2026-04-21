@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const nunitoSans = Nunito_Sans({
+const nunito = Nunito({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
-  variable: "--font-nunito-sans",
+  variable: "--font-nunito",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={nunitoSans.variable}>
+    <html lang="fr" className={nunito.variable}>
       <head>
         <link rel="icon" href="/favicon-oropra.png" />
       </head>
