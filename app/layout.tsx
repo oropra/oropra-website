@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={nunito.variable}>
+    <html lang="fr" className={`${nunito.variable} ${nunito.className}`}>
       <head>
         <link rel="icon" href="/favicon-oropra.png" />
       </head>
