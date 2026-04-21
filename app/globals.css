@@ -59,7 +59,8 @@
   --shadow-card-strong: 0 4px 16px rgba(22, 58, 110, 0.10);
 
   /* Typography */
-  --font-sans: 'Comfortaa', sans-serif;
+  --font-sans: var(--font-nunito-sans), sans-serif;
+  --font-weight-bold: 800;
 
   /* Border radius */
   --radius-btn: 9px;
@@ -75,7 +76,7 @@
 body {
   background-color: #ffffff;
   color: #2557a1;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
