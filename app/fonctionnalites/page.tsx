@@ -80,11 +80,11 @@ export default function FonctionnalitesPage() {
             <motion.div
               key={f.num}
               variants={fadeUp}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white rounded-[14px] p-8 border border-border-light shadow-[var(--shadow-default)]"
+              className={`${"video" in f ? "flex flex-col" : "grid grid-cols-1 lg:grid-cols-2 items-center"} gap-10 bg-white rounded-[14px] p-8 border border-border-light shadow-[var(--shadow-default)]`}
             >
               {"video" in f ? (
                 <>
-                  <div className="flex flex-col gap-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-3xl font-bold text-border-strong">{f.num}</span>
@@ -93,19 +93,19 @@ export default function FonctionnalitesPage() {
                       <h2 className="text-2xl font-bold text-text-emphasis mb-3">{f.title}</h2>
                       <p className="text-text-subtle leading-relaxed">{f.desc}</p>
                     </div>
-                    <div className="space-y-3">
-                      {f.points.map((p) => (
-                        <div key={p} className="flex items-center gap-3 bg-bg-base rounded-xl px-4 py-3 border border-border-light">
-                          <div className="w-2 h-2 rounded-full bg-accent-default shrink-0" />
-                          <span className="text-sm text-text-primary">{p}</span>
-                        </div>
-                      ))}
+                    <div className="rounded-xl overflow-hidden border border-border-light shadow-sm">
+                      <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                        <source src={f.video} type="video/mp4" />
+                      </video>
                     </div>
                   </div>
-                  <div className="rounded-xl overflow-hidden border border-border-light shadow-sm">
-                    <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                      <source src={f.video} type="video/mp4" />
-                    </video>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {f.points.map((p) => (
+                      <div key={p} className="flex items-center gap-3 bg-bg-base rounded-xl px-4 py-3 border border-border-light">
+                        <div className="w-2 h-2 rounded-full bg-accent-default shrink-0" />
+                        <span className="text-sm text-text-primary">{p}</span>
+                      </div>
+                    ))}
                   </div>
                 </>
               ) : (
